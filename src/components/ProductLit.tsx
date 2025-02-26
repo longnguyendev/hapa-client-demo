@@ -49,7 +49,7 @@ export function ProductList({ data }: { data: ProductListProps }) {
           {item.label}
         </Box>
       ))}
-      <Flex flexDirection="column" gap={5}>
+      <Flex flexDirection="column" gap={{ xs: 1, lg: 5 }}>
         {data.map((item, index) => (
           <ProductItem key={item.name} {...item} index={index} />
         ))}

@@ -7,6 +7,10 @@ import { Calender2, Circle, Clock2, Tag } from "@/assets/icons";
 interface TableProps {
   image: string;
   name: string;
+  info?: {
+    series: string;
+    installationSate: string;
+  };
   items: Array<{
     id: number;
     image: string;
@@ -18,7 +22,7 @@ interface TableProps {
   }>;
 }
 
-export function Table({ image, name, items }: TableProps) {
+export function Table({ image, name, items, info }: TableProps) {
   return (
     <Box
       component="table"
@@ -88,17 +92,66 @@ export function Table({ image, name, items }: TableProps) {
                   }}
                 />
               </Box>
-              <Typography
-                sx={{
-                  textAlign: "left",
-                  color: "text.secondary",
-                  fontWeight: 300,
-                  fontFamily: "Inter",
-                  fontSize: { xs: 14, lg: 20 },
-                }}
+              <Flex
+                alignItems={{ xs: "flex-start", lg: "center" }}
+                flexDirection={{ xs: "column", lg: "row" }}
+                flexGrow={1}
+                justifyContent="space-between"
               >
-                {name}
-              </Typography>
+                <Typography
+                  sx={{
+                    textAlign: "left",
+                    color: "text.secondary",
+                    fontWeight: 300,
+                    fontFamily: "Inter",
+                    fontSize: { xs: 14, lg: 20 },
+                  }}
+                >
+                  {name}
+                </Typography>
+                {info && (
+                  <Flex
+                    flexDirection={{ xs: "column", lg: "row" }}
+                    alignItems={{ xs: "flex-start", lg: "center" }}
+                  >
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        textAlign: "left",
+                        fontFamily: "Inter",
+                        fontWeight: 300,
+                        color: "#999999",
+                      }}
+                    >
+                      {"Ngày lắp đặt: "}
+                      {info.installationSate}
+                    </Typography>
+                    <Typography
+                      display={{ xs: "none", lg: "inline-flex" }}
+                      sx={{
+                        fontFamily: "Inter",
+                        fontWeight: 300,
+                        color: "#999999",
+                        mx: 0.5,
+                      }}
+                    >
+                      {"·"}
+                    </Typography>
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        textAlign: "left",
+                        fontFamily: "Inter",
+                        fontWeight: 300,
+                        color: "#999999",
+                      }}
+                    >
+                      {"Series: "}
+                      {info.series}
+                    </Typography>
+                  </Flex>
+                )}
+              </Flex>
             </Flex>
           </td>
         </Box>

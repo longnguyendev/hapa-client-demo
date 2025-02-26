@@ -51,6 +51,10 @@ const data: DataType = [
     image:
       "https://bizweb.dktcdn.net/100/075/453/products/kg107as.jpg?v=1646385601027",
     name: "Máy Lọc Nước 3M BREW120-MS",
+    info: {
+      installationSate: "18/06/2024",
+      series: "ABC123XYZ",
+    },
     items: [
       {
         image:
@@ -105,7 +109,7 @@ export function HomePage() {
           }}
         />
       </Box>
-      <Flex mx={5} flexDirection="column" gap={5} mt={25}>
+      <Flex mx={{ xs: 1, lg: 5 }} flexDirection="column" gap={5} mt={25}>
         <ProductList data={data} />
       </Flex>
     </>

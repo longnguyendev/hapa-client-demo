@@ -23,27 +23,27 @@ const navItems: NavItem[] = [
   },
   {
     title: "Thời gian thay lõi",
-    path: "/order",
+    path: "/calender",
     icon: "Calender",
   },
   {
     title: "Lịch sử đơn hàng",
-    path: "/customer",
+    path: "/history",
     icon: "Clock",
   },
   {
     title: "Điểm tích lũy",
-    path: "/status",
+    path: "/point",
     icon: "MoneyBag",
   },
   {
     title: "Tài khoản",
-    path: "/unit",
+    path: "/account",
     icon: "Account",
   },
   {
     title: "Tính năng khác",
-    path: "/unit",
+    path: "/another",
     icon: "Another",
   },
 ];
